@@ -1,0 +1,22 @@
+package ast.stm;
+
+import java.util.LinkedList;
+
+public class While extends T
+{
+  public ast.exp.T condition;
+  public T body;
+//  public LinkedList<ast.stm.T> body;
+
+  public While(ast.exp.T condition, T body)
+  {
+    this.condition = condition;
+    this.body = body;
+  }
+
+  @Override
+  public void accept(ast.Visitor v)
+  {
+    v.visit(this);
+  }
+}
